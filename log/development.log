@@ -1,0 +1,314 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-27 15:06:49 -0600
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  vendor/bundle/gems/activerecord-4.0.0/lib/active_record/migration.rb:379:in `check_pending!'
+  vendor/bundle/gems/activerecord-4.0.0/lib/active_record/migration.rb:366:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__2909250498314415243__call__callbacks'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/gems/railties-4.0.0/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `block in call'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:25:in `tagged'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `tagged'
+  vendor/bundle/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/gems/activesupport-4.0.0/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/gems/railties-4.0.0/lib/rails/engine.rb:511:in `call'
+  vendor/bundle/gems/railties-4.0.0/lib/rails/application.rb:97:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jpowell/.rbenv/versions/1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jpowell/.rbenv/versions/1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jpowell/.rbenv/versions/1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "examples" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "level" integer, "number" integer, "description" text) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131007194224')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131007184412')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "examples"
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Application template with no {{outtlet}}' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Creating an `application` layout, but not yet providing an outlet. \n"], ["level", 1], ["number", 10], ["title", "Application template with no {{outtlet}}"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'The First View' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Setting up the `index` template.\n"], ["level", 1], ["number", 20], ["title", "The First View"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'About Page' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "The About Page.\n"], ["level", 1], ["number", 30], ["title", "About Page"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Linking to the About Page' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using the handlebars `link-to` helper.\n"], ["level", 2], ["number", 10], ["title", "Linking to the About Page"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Handlebars With Options' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Passing options to a `link-to` helper.\n"], ["level", 2], ["number", 20], ["title", "Handlebars With Options"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Controller Basics' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Providing data for a template.\n"], ["level", 2], ["number", 50], ["title", "Controller Basics"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Binding attributes and functions' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Binding attributes using `{{bind-attr}}`.\n"], ["level", 2], ["number", 60], ["title", "Binding attributes and functions"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Function as a property' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using functions as properties\n"], ["level", 2], ["number", 70], ["title", "Function as a property"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Creating a route route and a new template' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "New resource route with no model yet.\n"], ["level", 3], ["number", 10], ["title", "Creating a route route and a new template"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Adding data to a resource route' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using the `model` method to provide data to a route.\n"], ["level", 3], ["number", 15], ["title", "Adding data to a resource route"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'A Simple Loop' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using `each` to loop over an array.\n"], ["level", 3], ["number", 20], ["title", "A Simple Loop"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'A Product Route' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Simple Product Route. Using a dynamic segment.\n"], ["level", 3], ["number", 30], ["title", "A Product Route"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Detailed Product' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "A more elaborate `product` template and link in from the `products` template.\n"], ["level", 3], ["number", 40], ["title", "Detailed Product"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Master Detail' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Nested route with master detail.\n"], ["level", 3], ["number", 50], ["title", "Master Detail"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Nested Route with index template' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using a nested index template\n"], ["level", 3], ["number", 60], ["title", "Nested Route with index template"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Ember Data Basics ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using Ember Data with `FixtureAdapter`.\n\nCreating a `Model` with a string attribute.\n\nUpdating Routes to use the new data store to fetch objects.\n"], ["level", 4], ["number", 10], ["title", "Ember Data Basics "]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'URL Refactor' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Refactoring URL to use product_id\n"], ["level", 4], ["number", 20], ["title", "URL Refactor"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Ember Data Related Models' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "`hasMany` and `belongsTo` in Ember Data\n"], ["level", 4], ["number", 30], ["title", "Ember Data Related Models"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Using aync:true' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using async true to load everything.\n"], ["level", 4], ["number", 40], ["title", "Using aync:true"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Hitting the server with Ember Data' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Changing to our REST adapter and hitting the server.\n"], ["level", 4], ["number", 50], ["title", "Hitting the server with Ember Data"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Sorting in a router ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "How to pass attributes to a the server for sorting.\n"], ["level", 5], ["number", 5], ["title", "Sorting in a router "]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Wrong order for a controller ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "How to pass attributes to a the server for sorting.\n"], ["level", 5], ["number", 7], ["title", "Wrong order for a controller "]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Ember Controller Types ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Sorting by a property in a Controller.\n"], ["level", 5], ["number", 10], ["title", "Ember Controller Types "]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Computed Alias ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Switching to an `Ember.computed.alias`.\n"], ["level", 5], ["number", 20], ["title", "Computed Alias "]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Displaying Filtered Content' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Creating a controller property to provide an array.\n\nUsing `filterProperty` and limiting the result.\n\nBinding a controller property to an attribute in an array.\n"], ["level", 5], ["number", 30], ["title", "Displaying Filtered Content"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Creating a nested route for products on sale' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Setting up a `route` nested in our products `resource`.\n"], ["level", 5], ["number", 40], ["title", "Creating a nested route for products on sale"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Ember Components' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Moving product details into a component.\n"], ["level", 6], ["number", 10], ["title", "Ember Components"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Component Objects' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using a Component Object.\n"], ["level", 6], ["number", 15], ["title", "Component Objects"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Ember Views' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using an Ember view.\n"], ["level", 6], ["number", 20], ["title", "Ember Views"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Partials' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using a partial to abstract out content.\n"], ["level", 6], ["number", 30], ["title", "Partials"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Sub controllers' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using render with a controller.\n"], ["level", 6], ["number", 40], ["title", "Sub controllers"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Showing the preview' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Binding to show a preview of a review.\n"], ["level", 7], ["number", 5], ["title", "Showing the preview"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Adding an Action' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Adding an action back to the controller.\n"], ["level", 7], ["number", 10], ["title", "Adding an Action"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Save with RESTAdapter' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using `save()` with the REST adapter\n"], ["level", 7], ["number", 15], ["title", "Save with RESTAdapter"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Controller shared state' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Using a new model.\n"], ["level", 7], ["number", 20], ["title", "Controller shared state"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Hiding the form' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Hiding the form after writing a review.\n"], ["level", 7], ["number", 30], ["title", "Hiding the form"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT "examples".* FROM "examples" WHERE "examples"."title" = 'Shortening the Review' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("description", "level", "number", "title") VALUES (?, ?, ?, ?)[0m  [["description", "Shortening the review with a \"read more...\" link.\n"], ["level", 7], ["number", 40], ["title", "Shortening the Review"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-27 15:07:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#show as HTML
+  Parameters: {"id"=>"3-50"}
+  [1m[35mExample Load (0.1ms)[0m  SELECT "examples".* FROM "examples" WHERE "examples"."number" = 50 AND "examples"."level" = 3 LIMIT 1
+  Rendered example/_example_3_50.html.erb (0.4ms)
+  Rendered examples/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 177ms (Views: 155.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/markdown.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/ember-data.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/ember.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
+
+
+Started GET "/assets/clarendonltstd-webfont.woff" for 127.0.0.1 at 2014-07-27 15:07:10 -0600
